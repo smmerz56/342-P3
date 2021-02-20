@@ -1,0 +1,63 @@
+
+Don't refer to NodeData in the comments.
+
+Class definition
+-----------------
+
+Class comments and assumptions/implementation were not looked at.
+You should have used the List ADT description and assumptions/implementation
+given in the starter code (linked from the sample code page). If you didn't,
+go look at them.
+
+Const used correctly in function parameter list.
+
+Missing const at the end of retrieve.
+
+Clearly comment functions always.
+Be sure to describe functionality. They don't have to be long,
+but a reader should be able to use the function from the description
+in the class definition.  Take the description from the assignment
+and put it into the class definition.  E.g., merge two sorted lists
+into one sorted list, the "this" list, emptying parameter lists
+(with the exception if "this" list is a parameter)
+
+All data members need good descriptive comments.
+
+
+Source code
+------------
+
+When creating new data objects, it is cleaner to just use the
+copy constuctor of the templated type. For example:
+   current->data = new T(*source->data);
+
+Use some internal comments in merge/intersect to guide the reader
+through the code.
+
+In the operator!=, you can use ==: return !(*this == rightSide);
+
+Don't need a special case for head in retrieve.
+
+
+Execution
+---------
+
+Tests for assignment and copy constructor: Correct output.
+No memory leaks on this test.
+
+Tests for equality (operator==): Not always correct.
+Comparing different lengthed lists gave incorrect output.
+No memory leaks on this test.
+
+Tests for retrieve and remove: Pass
+No memory leaks on this test.
+
+Tests for merge: Mostly correct
+Program hung when param 1 and 2 same as current object
+Cannot test for memory leaks on this test because of infinite loop.
+
+Tests for intersect: Pass
+No memory leaks on this test.
+
+
+Grade: 35 out of 40
